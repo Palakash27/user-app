@@ -1,7 +1,13 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +41,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+header {
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+  background-color: #282c34;
+}
+
+.userCard {
+  box-shadow: 10px 10px 5px grey;
+}
+a {
+  text-decoration: none;
+}
+a,
+a:visited {
+  color: #00e;
 }
