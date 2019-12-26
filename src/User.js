@@ -5,7 +5,10 @@ export class User extends Component {
   render() {
     return (
       <li style={userListStyle}>
-        <Link to={`/user/${this.props.user.id}`} style={{ color: "inherit" }}>
+        <Link
+          to={`/user-app/user/${this.props.user.id}`}
+          style={{ color: "inherit" }}
+        >
           <div style={userStyle}>
             <b>{this.props.user.name}</b>
             <br />

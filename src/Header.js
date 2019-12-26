@@ -6,7 +6,7 @@ export default function Header() {
     <div>
       <header>
         <h1>USER APP</h1>
-        <Link to="/" style={{ color: "inherit" }}>
+        <Link to="/user-app/" style={{ color: "inherit" }}>
           Home
         </Link>
       </header>

@@ -30,10 +30,10 @@ export class App extends Component {
       <Router>
         <Header />
         <Switch>
-          <Route path="/user/:id" Component={UserCard}>
+          <Route path="/user-app/user/:id" Component={UserCard}>
             <UserCard />
           </Route>
-          <Route path="/">
+          <Route path="/user-app/">
             <UserList users={this.state.users} />
           </Route>
         </Switch>
