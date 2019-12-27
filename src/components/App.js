@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./Header";
-import UserList from "./UserList";
+import UserList from "./pages/UserList";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import UserCard from "./UserCard";
+import UserCard from "./pages/UserCard";
 
 export class App extends Component {
   state = {
