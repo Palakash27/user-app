@@ -7,8 +7,8 @@ import UserCard from "./UserCard";
 
 export class App extends Component {
   state = {
-    users: []
-    // images: []
+    users: [],
+    images: []
   };
   componentDidMount() {
     //fetching users
@@ -17,21 +17,21 @@ export class App extends Component {
       .then(users => this.setState({ users }));
 
     // //fetching profile images
-    // fetch(
-    //   "https://api.unsplash.com/search/photos?query=person&client_id=f0f8d780dab3e908e61236e22f52af9957384ddc8cefd5b64ebca443f9e41d66"
-    // )
-    //   .then(res => res.json())
-    //   .then(data =>
-    //     this.setState({ images: data.results.map(image => image.urls.regular) })
-    //   );
+    fetch(
+      "https://api.unsplash.com/search/photos?query=person&client_id=f0f8d780dab3e908e61236e22f52af9957384ddc8cefd5b64ebca443f9e41d66"
+    )
+      .then(res => res.json())
+      .then(data =>
+        this.setState({ images: data.results.map(image => image.urls.small) })
+      );
   }
   render() {
     return (
       <Router>
         <Header />
         <Switch>
-          <Route path="/user-app/user/:id" Component={UserCard}>
-            <UserCard />
+          <Route path="/user-app/user/:id">
+            <UserCard images={this.state.images} />
           </Route>
           <Route path="/user-app/">
             <UserList users={this.state.users} />

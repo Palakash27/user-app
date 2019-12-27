@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function UserCard() {
+function UserCard(props) {
   const params = useParams();
   const [user, setuser] = useState();
 
@@ -15,14 +15,21 @@ function UserCard() {
       {!user && <h2 style={{ textAlign: "center" }}>Loading profile</h2>}
       {user && (
         <div style={profileStyle}>
-          <div style={{ width: "30%", height: "80%", float: "left" }}>
+          <div
+            style={{
+              width: "30%",
+              height: "80%",
+              display: "flex",
+              flexDirection: "row"
+            }}
+          >
             <img
-              src="https://images.fineartamerica.com/images-medium-large-5/businessman-vector-icon-art-sonik.jpg"
+              src={props.images[Number(params.id) - 1]}
               alt="Profile"
               style={{
                 padding: "20px",
-                width: "75%",
-                height: "75%",
+                width: "100%",
+                height: "80%",
                 borderRadius: "50%"
               }}
             ></img>
@@ -32,7 +39,7 @@ function UserCard() {
               padding: "30px",
               width: "70%",
               height: "80%",
-              float: "right",
+              flexDirection: "row",
               fontSize: 30,
               color: "white"
             }}
@@ -64,6 +71,7 @@ function UserCard() {
 const profileStyle = {
   padding: "20px",
   background: "gray",
-  height: "612px"
+  height: "612px",
+  display: "flex"
 };
 export default UserCard;
