@@ -26,7 +26,7 @@ export class User extends Component {
   }
 }
 const userListStyle = {
-  padding: 25,
+  padding: "0px 25px 25px 25px",
   backgroundColor: "white",
   textColor: "black",
   fontSize: 20

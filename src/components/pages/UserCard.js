@@ -11,37 +11,40 @@ function UserCard(props) {
       .then(data => setuser(data));
   }, [params.id]);
   return (
-    <>
+    <div
+      style={{
+        padding: "30px"
+      }}
+    >
       {!user && <h2 style={{ textAlign: "center" }}>Loading profile</h2>}
       {user && (
         <div style={profileStyle}>
           <div
-            style={{
-              width: "30%",
-              height: "80%",
-              display: "flex",
-              flexDirection: "row"
-            }}
+            style={
+              {
+                // width: "30%",
+                // height: "80%",
+                // display: "flex",
+                // flexDirection: "row"
+              }
+            }
           >
             <img
               src={props.images[Number(params.id) - 1]}
               alt="Profile"
               style={{
-                padding: "20px",
-                width: "100%",
-                height: "80%",
+                // padding: "20px",
+                width: "50%",
+                // height: "80%",
                 borderRadius: "50%"
               }}
             ></img>
           </div>
           <div
             style={{
-              padding: "30px",
-              width: "70%",
-              height: "80%",
-              flexDirection: "row",
               fontSize: 30,
-              color: "white"
+              textAlign: "center",
+              color: "black"
             }}
           >
             <p>Name: {user.name}</p>
@@ -65,13 +68,16 @@ function UserCard(props) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 const profileStyle = {
-  padding: "20px",
   background: "gray",
-  height: "612px",
-  display: "flex"
+  // display: "flex",
+  fontSize: 20,
+  boxShadow: "10px 10px 18px grey",
+  padding: "30px",
+  backgroundColor: "rgb(236, 232, 232)",
+  textAlign: "center"
 };
 export default UserCard;
